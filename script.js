@@ -24,7 +24,7 @@ function redondearMultiplo(valor, multiplo) {
 
 multiplyButton.addEventListener("click", () => {
   bpm = redondearMultiplo(bpm * 2, 5);
-  bpm = Math.min(240, bpm);
+  bpm = Math.min(500, bpm); // Cambiado a 500
   bpmInput.value = bpm;
   bpmDisplay.textContent = bpm;
   if (intervalId) {
