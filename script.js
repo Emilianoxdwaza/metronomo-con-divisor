@@ -7,7 +7,24 @@ const bpmInput = document.getElementById("bpm");
 const bpmDisplay = document.getElementById("bpmDisplay");
 const startButton = document.getElementById("start");
 const stopButton = document.getElementById("stop");
-const divideButton = document.getElementById("divide"); // NUEVO
+const divideButton = document.getElementById("divide");
+const multiplyButton = document.getElementById("multiply");
+
+// Agrega la función que faltaba
+function redondearMultiplo(valor, multiplo) {
+  return Math.round(valor / multiplo) * multiplo;
+}
+
+multiplyButton.addEventListener("click", () => {
+  bpm = redondearMultiplo(bpm * 2, 5); // Redondea al múltiplo más cercano de 5
+  bpm = Math.min(240, bpm); // Limita máximo a 240 BPM
+  bpmInput.value = bpm;
+  bpmDisplay.textContent = bpm;
+  if (intervalId) {
+    stopMetronome();
+    startMetronome();
+  }
+});
 
 bpmInput.addEventListener("input", () => {
   bpm = parseInt(bpmInput.value);
@@ -45,8 +62,7 @@ function startMetronome() {
   }, interval);
 }
 
-
 function stopMetronome() {
   clearInterval(intervalId);
-  intervalId = null;
+  intervalId
 }
