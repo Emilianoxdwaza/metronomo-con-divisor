@@ -13,14 +13,15 @@
     <input type="range" id="bpm" min="30" max="240" value="60">
     
     <div class="buttons">
-  <button id="start">Iniciar</button>
-  <button id="stop">Detener</button>
-  <button id="divide">Dividir BPM</button>
-  <button id="multiply">Multiplicar BPM</button>
-
-
+      <button id="start">Iniciar</button>
+      <button id="stop">Detener</button>
+      <button id="divide">Dividir BPM</button> 
+      <button id="multiply">Multiplicar BPM</button>
     </div>
+
+    <label for="beatsPerBar">Tiempos por compás: <span id="beatsPerBarDisplay">4</span></label>
+    <input type="range" id="beatsPerBar" min="1" max="12" value="4">
+
+    <div id="beatIndicator" style="margin: 20px; font-size: 2em;"></div>
   </div>
   <script src="script.js"></script>
-</body>
-</html>
